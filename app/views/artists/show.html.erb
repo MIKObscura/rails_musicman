@@ -1,0 +1,8 @@
+<h1><%= @artist.name %></h1>
+<div>
+  <ul class="list-disc list-inside">
+    <% @artist_albums.each do |al| %>
+    <li><a class="font-semibold hover:text-purple-500" href='/albums/<%= al.id %>'><%= al.title %></a></li>
+    <% end %>
+  </ul>
+</div>

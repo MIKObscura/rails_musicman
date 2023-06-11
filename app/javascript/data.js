@@ -1,0 +1,1 @@
+const data = {} //put the content of your stat.json file here

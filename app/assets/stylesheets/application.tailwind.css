@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+    .unstyled-tab {
+        @apply border-0 table-auto border-collapse;
+    }
+}
+@layer base {
+    h1 {
+        @apply text-5xl;
+    }
+    table, td, tr, tbody, thead {
+        @apply table-auto border-collapse border border-gray-300;
+    }
+}

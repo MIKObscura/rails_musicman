@@ -1,0 +1,21 @@
+<h1>Albums</h1>
+<div>
+  <table>
+    <thead class="text-xl">
+    <tr>
+      <td>Title</td>
+      <td>Plays</td>
+      <td>Playtime</td>
+    </tr>
+    </thead>
+    <tbody>
+    <% @albums.zip(@albums_time, @albums_plays).each do |album, time, plays| %>
+    <tr>
+      <td><a class="font-semibold hover:text-purple-500" href='/albums/<%= album.id %>'><%= album.artist.name %> - <%= album.title %></a></td>
+      <td><%= plays[1] %></td>
+      <td><%= time_string(time[1]) %></td>
+    </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

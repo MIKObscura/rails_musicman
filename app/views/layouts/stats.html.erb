@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Scrobbling Stats</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+  <%= javascript_include_tag "stats" %>
+  <%= javascript_include_tag "data" %>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.0/dist/chart.umd.min.js"></script>
+  <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+</head>
+<body>
+<nav class="pb-2">
+  <a class="font-semibold text-purple-500 px-0.5" href='/artists'>Artists</a>
+  <a class="font-semibold text-purple-500 px-0.5" href='/albums'>Albums</a>
+  <a class="font-semibold text-purple-500 px-0.5" href='/albums/<%= rand(95) + 1 %>'> Random</a>
+  <a class="font-semibold text-purple-500 px-0.5" href='/stats'>Stats</a>
+</nav>
+<nav id="selectors">
+  <button class="outline-1 outline px-0.5 hover:bg-purple-500" id="overall" onclick="init_overall()">Overall</button>
+  <button class="outline-1 outline px-0.5 hover:bg-purple-500" id="week" onclick="init_week()">Last Week</button>
+  <button class="outline-1 outline px-0.5 hover:bg-purple-500" id="month" onclick="init_month()">This Month</button>
+  <button class="outline-1 px-0.5 outline hover:bg-purple-500" id="year" onclick="init_year()">This Year</button>
+</nav>
+<div id="hours" style="height: 1000px; width: 750px"><canvas id="hours_graph"></canvas></div>
+<div id="days" style="height: 500px; width: 700px"><canvas id="days_graph"></canvas></div>
+<div id="artists" style="height: 500px; width: 700px"><canvas id="artists_graph"></canvas></div>
+<div id="albums" style="height: 500px; width: 700px"><canvas id="albums_graph"></canvas></div>
+<div id="artists_time" style="height: 500px; width: 700px"><canvas id="artists_time_graph"></canvas></div>
+<div id="albums_time" style="height: 500px; width: 700px"><canvas id="albums_time_graph"></canvas></div>
+<div id="tracks" style="height: 500px; width: 700px"><canvas id="tracks_graph"></canvas></div>
+<div id="misc">
+  <p>Different Tracks: <span id="diff_t"></span></p>
+  <p>Different Albums: <span id="diff_al"></span></p>
+  <p>Different Artists: <span id="diff_ar"></span></p>
+  <p>Total Playtime: <span id="total"></span></p>
+</div>
+</body>
+</html>

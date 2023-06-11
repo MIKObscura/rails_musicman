@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Musicman</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+  <nav>
+    <a class="font-semibold text-purple-500 px-0.5" href='/artists'>Artists</a>
+    <a class="font-semibold text-purple-500 px-0.5" href='/albums'>Albums</a>
+    <a class="font-semibold text-purple-500 px-0.5" href='/albums/<%= rand(@albums_amount) + 1 %>'> Random</a>
+    <a class="font-semibold text-purple-500 px-0.5" href='/stats'>Stats</a>
+  </nav>
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<h1>Artists</h1>
+<div>
+  <table>
+    <thead>
+    <tr class="font-semibold">
+      <td>Name</td>
+      <td>Plays</td>
+      <td>Playtime</td>
+    </tr>
+    </thead>
+    <tbody>
+    <% @artists.zip(@artists_time, @artists_plays).each do |artist, time, plays| %>
+    <tr>
+      <td><a class="font-semibold hover:text-purple-500" href='/artists/<%= artist.id %>'><%= artist.name %></a></td>
+      <td><%= plays[1] %></td>
+      <td><%= time_string(time[1]) %></td>
+    </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

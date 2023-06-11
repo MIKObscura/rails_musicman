@@ -1,0 +1,1 @@
+/home/mikobscura/cmus_scrobbler/charts/js/stats.js

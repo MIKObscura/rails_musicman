@@ -1,0 +1,11 @@
+<h1 class="flex justify-center text-3xl"><%= @album.artist.name %> - <%= @album.title %></h1>
+<div class="flex justify-center py-2">
+  <ol class="list-decimal">
+    <% @tracklist.each do |track| %>
+      <li class="text-xl py-1 pr-2"><%= track.title %>   <span><%= time_string track.duration %></span></li>
+    <% end %>
+  </ol>
+</div>
+<div class="flex justify-center py-2">
+  <img src="<%= @image %>" alt="album-cover">
+</div>
